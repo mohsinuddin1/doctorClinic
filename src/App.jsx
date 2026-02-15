@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -96,6 +97,7 @@ export default function App() {
             <Contact />
             <Footer />
             <WhatsAppFloat />
+            <Analytics />
         </>
     )
 }
