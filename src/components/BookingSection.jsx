@@ -31,7 +31,7 @@ export default function BookingSection() {
     const minDate = toISODate(today)
     const maxDate = useMemo(() => {
         const d = new Date(today)
-        d.setDate(d.getDate() + 90)
+        d.setDate(d.getDate() + 180)
         return toISODate(d)
     }, [today])
 
