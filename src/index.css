@@ -1788,7 +1788,7 @@ ul {
     opacity: 1;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive — Tablet ---------- */
 @media (max-width: 1024px) {
     .hero-inner {
         grid-template-columns: 1fr;
@@ -1845,20 +1845,33 @@ ul {
     }
 }
 
+/* ---------- Responsive — Mobile Premium Overhaul ---------- */
 @media (max-width: 768px) {
+
+    /* === Global Mobile Reset === */
+    .container {
+        padding: 0 16px;
+    }
+
     .section {
-        padding: 72px 0;
+        padding: 56px 0;
     }
 
     .section-title {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        padding: 0 4px;
     }
 
     .section-subtitle {
-        font-size: 0.92rem;
-        margin-bottom: 40px;
+        font-size: 0.88rem;
+        margin-bottom: 32px;
+        padding: 0 4px;
+        line-height: 1.6;
     }
 
+    /* === Navbar — Compact floating pill === */
     .nav-links {
         display: none;
     }
@@ -1876,105 +1889,656 @@ ul {
     }
 
     .navbar {
-        top: 12px;
+        top: 10px;
+        padding: 0 12px;
     }
 
     .navbar-inner {
-        height: 54px;
-        padding: 0 6px 0 16px;
+        height: 50px;
+        padding: 0 6px 0 14px;
+        border-radius: 50px;
+        box-shadow: 0 2px 20px rgba(13, 124, 102, 0.1);
     }
 
+    .navbar-logo {
+        font-size: 1.05rem;
+        gap: 8px;
+    }
+
+    .navbar-logo .logo-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+
+    .hamburger {
+        font-size: 1.2rem;
+        padding: 8px 10px;
+    }
+
+    /* Mobile drawer polish */
+    .mobile-nav {
+        width: 280px;
+        padding: 24px 20px;
+        border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    }
+
+    .mobile-nav a {
+        padding: 13px 0;
+        font-size: 0.95rem;
+    }
+
+    .mobile-nav .close-mobile {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    /* === Announcement Bar === */
+    .announcement-bar {
+        font-size: 0.75rem;
+        padding: 8px 36px 8px 12px;
+        text-align: left;
+        line-height: 1.45;
+    }
+
+    .announcement-bar .close-btn {
+        right: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* === Hero — Mobile-first rewrite === */
     .hero {
-        padding: 48px 0 60px;
+        padding: 32px 0 48px;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+
+    .hero-badge {
+        font-size: 0.72rem;
+        padding: 5px 14px;
+        margin-bottom: 16px;
+    }
+
+    .hero-text {
+        font-size: 0.92rem;
+        margin-bottom: 24px;
+        line-height: 1.6;
+    }
+
+    .hero-btns {
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+
+    .hero-btns .btn {
+        padding: 12px 22px;
+        font-size: 0.85rem;
+        flex: 1;
+        justify-content: center;
+        min-width: 140px;
+    }
+
+    .hero-stats {
+        gap: 24px;
+        margin-bottom: 0;
+    }
+
+    .hero-stat .stat-num {
+        font-size: 1.5rem;
+    }
+
+    .hero-stat .stat-label {
+        font-size: 0.7rem;
     }
 
     .hero-float-card {
         display: none;
     }
 
+    .hero-image {
+        margin-top: 28px;
+    }
+
+    .hero-image img {
+        max-width: 280px;
+        border-radius: 40% 60% 60% 40% / 55% 45% 55% 45%;
+        border-width: 3px;
+    }
+
+    /* === Disease Ticker === */
+    .disease-ticker {
+        padding: 10px 0;
+    }
+
+    .ticker-item {
+        font-size: 0.78rem;
+        padding: 0 18px;
+    }
+
+    /* === About Doctor === */
+    .about-image-wrap img {
+        width: 220px;
+        height: 280px;
+        border-radius: var(--radius-md);
+    }
+
+    .about-image-wrap::after {
+        inset: -6px;
+    }
+
+    .about-image-wrap::before {
+        width: 40px;
+        height: 40px;
+        top: -12px;
+        left: -12px;
+    }
+
+    .about-exp-badge {
+        padding: 10px 16px;
+        font-size: 0.78rem;
+        bottom: -10px;
+        right: -8px;
+    }
+
+    .about-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-specialty {
+        font-size: 0.85rem;
+        margin-bottom: 14px;
+    }
+
+    .about-text {
+        font-size: 0.88rem;
+        margin-bottom: 14px;
+        line-height: 1.65;
+    }
+
+    .about-quals {
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    .qual-tag {
+        padding: 5px 11px;
+        font-size: 0.72rem;
+    }
+
+    /* === Services — 2-column compact grid === */
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .service-card {
+        padding: 20px 12px;
+        border-radius: var(--radius-sm);
+    }
+
+    .service-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        border-radius: 14px;
+    }
+
+    .service-card h3 {
+        font-size: 0.82rem;
+        margin-bottom: 4px;
+    }
+
+    .service-card p {
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+    /* === Consultation Options === */
     .consultation-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
-    .time-slots {
-        grid-template-columns: repeat(3, 1fr);
+    .consult-card {
+        padding: 28px 20px;
+        border-radius: var(--radius-md);
     }
 
-    .reviews-grid {
-        grid-template-columns: 1fr;
+    .consult-card .consult-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 1.5rem;
+        margin-bottom: 14px;
     }
 
-    .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
+    .consult-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .consult-card p {
+        font-size: 0.85rem;
+        margin-bottom: 18px;
+    }
+
+    /* === Health Assessment — Compact glassmorphic === */
+    .assessment-card {
+        padding: 24px 18px;
+        border-radius: var(--radius-md);
+    }
+
+    .assessment-step-label {
+        font-size: 0.7rem;
+    }
+
+    .assessment-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
     }
 
     .assessment-options {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
+    .assessment-option {
+        padding: 11px 12px;
+        font-size: 0.84rem;
+        border-radius: 10px;
+        min-height: 44px;
+        /* touch-friendly */
+    }
+
+    .assessment-option .option-check {
+        width: 18px;
+        height: 18px;
+    }
+
+    .assessment-nav {
+        margin-top: 16px;
+    }
+
+    .assessment-nav .btn {
+        font-size: 0.82rem;
+        padding: 10px 18px;
+    }
+
+    .urgency-badge {
+        font-size: 0.82rem;
+        padding: 8px 18px;
+    }
+
+    .result-text {
+        font-size: 0.88rem;
+    }
+
+    .result-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .result-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .condition-tag {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+    }
+
+    /* === Booking — Touch-friendly === */
     .booking-card {
-        padding: 28px;
+        padding: 22px 16px;
+        border-radius: var(--radius-md);
     }
 
-    .assessment-card {
-        padding: 28px;
+    .booking-field {
+        margin-bottom: 22px;
+    }
+
+    .booking-field label {
+        font-size: 0.82rem;
+        margin-bottom: 8px;
+    }
+
+    .booking-field input[type="text"],
+    .booking-field input[type="date"],
+    .booking-field select {
+        padding: 13px 14px;
+        font-size: 0.88rem;
+        border-radius: 10px;
+        min-height: 48px;
+        /* better tap target */
+    }
+
+    .time-slots {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .time-slot {
+        padding: 10px 4px;
+        font-size: 0.76rem;
+        border-radius: 10px;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .time-label {
+        margin: 14px 0 6px;
+        font-size: 0.72rem;
+    }
+
+    .consult-type-btns {
+        gap: 8px;
+    }
+
+    .consult-type-btn {
+        padding: 12px 8px;
+        font-size: 0.82rem;
+        border-radius: 10px;
+        min-height: 48px;
+    }
+
+    /* === Gallery — Horizontal scroll carousel === */
+    .gallery-grid {
+        grid-template-columns: none;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .gallery-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-item {
+        flex: 0 0 75%;
+        scroll-snap-align: center;
+        aspect-ratio: 4 / 3;
+        border-radius: var(--radius-md);
+    }
+
+    /* Gallery dot indicators */
+    .gallery-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .gallery-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background: var(--border);
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-dot.active {
+        background: var(--primary);
+        width: 24px;
+        border-radius: 4px;
+    }
+
+    /* === Reviews — Card stack with left border accent === */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .review-card {
+        padding: 20px;
+        border-radius: var(--radius-md);
+        border-left: 3px solid var(--primary-50);
+    }
+
+    .review-card.featured {
+        border-left-color: var(--primary);
+    }
+
+    .review-stars {
+        font-size: 0.88rem;
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        font-size: 0.85rem;
+        margin-bottom: 14px;
+    }
+
+    .review-avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 0.75rem;
+    }
+
+    .review-author-info .author-name {
+        font-size: 0.82rem;
+    }
+
+    /* === FAQ — Tighter mobile accordion === */
+    .faq-list {
+        gap: 8px;
+    }
+
+    .faq-question {
+        padding: 14px 16px;
+        font-size: 0.85rem;
+    }
+
+    .faq-question .faq-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 0.75rem;
+    }
+
+    .faq-item.open .faq-answer {
+        padding: 0 16px 16px;
+    }
+
+    .faq-answer p {
+        font-size: 0.82rem;
+    }
+
+    /* === Contact === */
+    .contact-item .contact-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 1.05rem;
+    }
+
+    .contact-item h4 {
+        font-size: 0.82rem;
+    }
+
+    .contact-item p {
+        font-size: 0.78rem;
+    }
+
+    .hours-table td {
+        padding: 6px 0;
+        font-size: 0.78rem;
+    }
+
+    .contact-map {
+        min-height: 260px;
+        border-radius: var(--radius-md);
+    }
+
+    /* === Footer === */
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer h4 {
+        font-size: 0.88rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+        font-size: 0.78rem;
+    }
+
+    .footer-links a {
+        font-size: 0.78rem;
+        padding: 4px 0;
+    }
+
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.72rem;
+        padding-top: 18px;
+    }
+
+    /* === WhatsApp Float — Bottom safe area === */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 16px;
+    }
+
+    .whatsapp-float a {
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+
+    /* === Wave dividers scale down === */
+    .wave-divider svg {
+        height: 35px;
+    }
+
+    /* === Buttons — Full width on mobile === */
+    .btn {
+        padding: 12px 22px;
+        font-size: 0.85rem;
+    }
+
+    .btn-lg {
+        padding: 14px 28px;
+        font-size: 0.92rem;
     }
 }
 
-@media (max-width: 480px) {
+/* ---------- Responsive — Small Phones ---------- */
+@media (max-width: 400px) {
+    .container {
+        padding: 0 12px;
+    }
+
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.65rem;
+    }
+
+    .hero-text {
+        font-size: 0.85rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
     }
 
     .hero-stats {
-        gap: 20px;
+        gap: 16px;
     }
 
     .hero-stat .stat-num {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+
+    .hero-image img {
+        max-width: 240px;
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .service-card {
+        padding: 16px 10px;
+    }
+
+    .service-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 0.78rem;
+    }
+
+    .service-card p {
+        font-size: 0.68rem;
     }
 
     .time-slots {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .time-slot {
+        font-size: 0.73rem;
+    }
+
     .consult-type-btns {
         flex-direction: column;
-    }
-
-    .btn {
-        padding: 12px 24px;
-        font-size: 0.88rem;
-    }
-
-    .whatsapp-float a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.45rem;
-    }
-
-    .result-actions {
-        flex-direction: column;
+        gap: 6px;
     }
 
     .booking-card {
-        padding: 20px;
+        padding: 18px 14px;
+    }
+
+    .assessment-card {
+        padding: 20px 14px;
+    }
+
+    .gallery-item {
+        flex: 0 0 85%;
     }
 
     .navbar-inner {
-        padding: 0 4px 0 14px;
+        padding: 0 4px 0 12px;
+    }
+
+    .navbar-logo {
+        font-size: 0.95rem;
     }
 }
